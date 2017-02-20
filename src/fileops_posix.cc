@@ -40,7 +40,7 @@ HLStatus FileOpsPosix::pread(void *buf, size_t count, cs_off_t offset)
     if (!buf) return HLStatus(HLS_FAIL);
 
     ssize_t r = ::pread(fd, buf, count, offset);
-    if (r != count) return HLStatus(HLS_FAIL);
+    if (r != (ssize_t)count) return HLStatus(HLS_FAIL);
 
     return HLStatus();
 }
@@ -50,7 +50,7 @@ HLStatus FileOpsPosix::pwrite(const void *buf, size_t count, cs_off_t offset)
     if (fd <= 0) return HLStatus(HLS_FAIL);
 
     ssize_t r = ::pwrite(fd, buf, count, offset);
-    if (r != count) return HLStatus(HLS_FAIL);
+    if (r != (ssize_t)count) return HLStatus(HLS_FAIL);
 
     return HLStatus();
 }
