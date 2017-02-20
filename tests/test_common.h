@@ -9,8 +9,8 @@ typedef int (test_func)();
 #define _CLM_B_GREEN   "\033[1;32m"
 #define _CLM_RED       "\033[31m"
 #define _CLM_B_RED     "\033[1;31m"
-#define _CLM_BLUE       "\033[34m"
-#define _CLM_B_BLUE     "\033[1;34m"
+#define _CLM_BLUE      "\033[34m"
+#define _CLM_B_BLUE    "\033[1;34m"
 #define _CLM_MAGENTA   "\033[35m"
 #define _CLM_B_MAGENTA "\033[1;35m"
 #define _CLM_CYAN      "\033[36m"
@@ -69,7 +69,9 @@ public:
     static std::string getTestFileName(std::string prefix);
     static void clearTestFile(std::string prefix);
 
-    void doTest(std::string test_name, test_func *func, TestArgsBase *args = nullptr);
+    void doTest(std::string test_name,
+                test_func *func,
+                TestArgsBase *args = nullptr);
 
 private:
     size_t cntPass;

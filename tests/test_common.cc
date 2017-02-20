@@ -35,7 +35,9 @@ void TestSuite::clearTestFile(std::string prefix)
     r = system(command.c_str());
 }
 
-void TestSuite::doTest(std::string test_name, test_func *func, TestArgsBase *args)
+void TestSuite::doTest(std::string test_name,
+                       test_func *func,
+                       TestArgsBase *args)
 {
     int ret = func();
     if (ret < 0) {
