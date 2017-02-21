@@ -9,7 +9,7 @@ TestSuite::TestSuite() :
 
 TestSuite::~TestSuite()
 {
-    printf(_CL_GREEN("%zu") " tests pased", cntPass);
+    printf(_CL_GREEN("%zu") " tests passed", cntPass);
     if (cntFail) {
         printf(", " _CL_RED("%zu") " tests failed", cntFail);
     }

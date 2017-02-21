@@ -2,6 +2,7 @@
 
 #include <string.h>
 #include <string>
+#include <iostream>
 
 struct SizedBinary {
     SizedBinary() : size(0), data(nullptr) { }
@@ -15,6 +16,27 @@ struct SizedBinary {
 
     SizedBinary(const std::string& str) {
         set(str.size(), (void*)str.c_str());
+    }
+
+    bool operator==(const SizedBinary &other) const {
+        if (size != other.size) {
+            return false;
+        }
+        if (size) {
+            return memcmp(data, other.data, size) == 0;
+        }
+        return true;
+    }
+
+    bool operator!=(const SizedBinary &other) const {
+        return !operator==(other);
+    }
+
+    friend std::ostream &operator<<(std::ostream &output, const SizedBinary &sb) {
+        char addr[16];
+        sprintf(addr, "%p", sb.data);
+        output << sb.size << ", " << addr;
+        return output;
     }
 
     void set(const std::string& str) {

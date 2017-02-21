@@ -25,10 +25,10 @@ typedef int (test_func)();
 
 #define CHK_EQ(exp_value, value) \
     if ((exp_value) != (value)) { \
-        std::cout << "\n    " _CLM_GREEN << __FILE__ << _CLM_END "::"; \
-        std::cout << _CLM_GREEN << __LINE__ << _CLM_END << ",\n" ; \
-        std::cout << "      " _CLM_CYAN << __func__ << "()" _CLM_END; \
-        std::cout << ", value of " _CLM_B_BLUE #value _CLM_END "\n"; \
+        std::cout << "\n    " _CLM_GREEN << __FILE__ << _CLM_END ":"; \
+        std::cout << _CLM_GREEN << __LINE__ << _CLM_END << ", " ; \
+        std::cout << _CLM_CYAN << __func__ << "()" _CLM_END << "\n"; \
+        std::cout << "    value of: " _CLM_B_BLUE #value _CLM_END "\n"; \
         std::cout << "    expected: " _CLM_B_GREEN << (exp_value) << _CLM_END "\n"; \
         std::cout << "      actual: " _CLM_B_RED << (value) << _CLM_END "\n"; \
         return -1; \
@@ -36,10 +36,10 @@ typedef int (test_func)();
 
 #define CHK_OK(value) \
     if (!(value)) { \
-        std::cout << "\n    " _CLM_GREEN << __FILE__ << _CLM_END "::"; \
-        std::cout << _CLM_GREEN << __LINE__ << _CLM_END << ",\n" ; \
-        std::cout << "      " _CLM_CYAN << __func__ << "()" _CLM_END; \
-        std::cout << ", value of " _CLM_B_BLUE #value _CLM_END "\n"; \
+        std::cout << "\n    " _CLM_GREEN << __FILE__ << _CLM_END ":"; \
+        std::cout << _CLM_GREEN << __LINE__ << _CLM_END << ", " ; \
+        std::cout << _CLM_CYAN << __func__ << "()" _CLM_END << "\n"; \
+        std::cout << "    value of: " _CLM_B_BLUE #value _CLM_END "\n"; \
         std::cout << "    expected: " _CLM_B_GREEN << "true" << _CLM_END "\n"; \
         std::cout << "      actual: " _CLM_B_RED << "false" << _CLM_END "\n"; \
         return -1; \
@@ -47,10 +47,10 @@ typedef int (test_func)();
 
 #define CHK_NOT(value) \
     if (value) { \
-        std::cout << "\n    " _CLM_GREEN << __FILE__ << _CLM_END "::"; \
-        std::cout << _CLM_GREEN << __LINE__ << _CLM_END << ",\n" ; \
-        std::cout << "      " _CLM_CYAN << __func__ << "()" _CLM_END; \
-        std::cout << ", value of " _CLM_B_BLUE #value _CLM_END "\n"; \
+        std::cout << "\n    " _CLM_GREEN << __FILE__ << _CLM_END ":"; \
+        std::cout << _CLM_GREEN << __LINE__ << _CLM_END << ", " ; \
+        std::cout << _CLM_CYAN << __func__ << "()" _CLM_END << "\n"; \
+        std::cout << "    value of: " _CLM_B_BLUE #value _CLM_END "\n"; \
         std::cout << "    expected: " _CLM_B_GREEN << "false" << _CLM_END "\n"; \
         std::cout << "      actual: " _CLM_B_RED << "true" << _CLM_END "\n"; \
         return -1; \
@@ -58,10 +58,10 @@ typedef int (test_func)();
 
 #define CHK_NULL(value) \
     if (value) { \
-        std::cout << "\n    " _CLM_GREEN << __FILE__ << _CLM_END "::"; \
-        std::cout << _CLM_GREEN << __LINE__ << _CLM_END << ",\n" ; \
-        std::cout << "      " _CLM_CYAN << __func__ << "()" _CLM_END; \
-        std::cout << ", value of " _CLM_B_BLUE #value _CLM_END "\n"; \
+        std::cout << "\n    " _CLM_GREEN << __FILE__ << _CLM_END ":"; \
+        std::cout << _CLM_GREEN << __LINE__ << _CLM_END << ", " ; \
+        std::cout << _CLM_CYAN << __func__ << "()" _CLM_END << "\n"; \
+        std::cout << "    value of: " _CLM_B_BLUE #value _CLM_END "\n"; \
         std::cout << "    expected: " _CLM_B_GREEN << "NULL" << _CLM_END "\n"; \
         printf("      actual: " _CLM_B_RED "%p" _CLM_END "\n", value); \
         return -1; \
@@ -69,10 +69,10 @@ typedef int (test_func)();
 
 #define CHK_NONNULL(value) \
     if (!(value)) { \
-        std::cout << "\n    " _CLM_GREEN << __FILE__ << _CLM_END "::"; \
-        std::cout << _CLM_GREEN << __LINE__ << _CLM_END << ",\n" ; \
-        std::cout << "      " _CLM_CYAN << __func__ << "()" _CLM_END; \
-        std::cout << ", value of " _CLM_B_BLUE #value _CLM_END "\n"; \
+        std::cout << "\n    " _CLM_GREEN << __FILE__ << _CLM_END ":"; \
+        std::cout << _CLM_GREEN << __LINE__ << _CLM_END << ", " ; \
+        std::cout << _CLM_CYAN << __func__ << "()" _CLM_END << "\n"; \
+        std::cout << "    value of: " _CLM_B_BLUE #value _CLM_END "\n"; \
         std::cout << "    expected: " _CLM_B_GREEN << "non-NULL" << _CLM_END "\n"; \
         std::cout << "      actual: " _CLM_B_RED << "NULL" << _CLM_END "\n"; \
         return -1; \
